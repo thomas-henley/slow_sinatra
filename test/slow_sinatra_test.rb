@@ -25,4 +25,10 @@ class SlowSinatraTest < Minitest::Test
     assert_equal 200, last_response.status
     assert_includes last_response.body, "pong!"
   end
+
+  def test_get_bad_endpoint
+    get "/test"
+
+    assert_equal 200, last_response.status
+  end
 end
