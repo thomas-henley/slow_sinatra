@@ -2,7 +2,8 @@ FROM ruby:3.1 as base
 
 WORKDIR /usr/src/app
 
-EXPOSE 5000
+EXPOSE 8080
+EXPOSE 80
 
 # Get dependencies
 COPY ./Gemfile ./Gemfile
