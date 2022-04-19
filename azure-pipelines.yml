@@ -15,7 +15,7 @@ stages:
   - stage: Test
     displayName: Test
     jobs:
-      - job: build-test
+      - job: build_test
         displayName: Build test image
         pool:
           vmImage: ubuntu-latest
