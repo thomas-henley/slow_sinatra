@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm -f wget-log
+rm -f results.log
 
 for i in {1..5}
 do
@@ -10,10 +10,10 @@ done
 
 sleep 30s
 
-cat wget-log >> results.log
+cat wget-log > results.log
 echo "" >> results.log
 echo "" >> results.log
-cat index.html* > results.log
+cat index.html* >> results.log
 
-rm index.html*
-rm wget-log
+rm -f index.html*
+rm -f wget-log
