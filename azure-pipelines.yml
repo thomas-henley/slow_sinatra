@@ -74,3 +74,13 @@ stages:
               repository: 'teefour/slow-sinatra'
               command: 'push'
               tags: '$(tag)'
+  - stage: Deploy
+    dependsOn: Build
+    displayName: Deploy
+    jobs:
+      - job: DeployProductionContainer
+        displayName: Deploy production container
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - script: echo This is where we would deploy.
