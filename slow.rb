@@ -34,9 +34,9 @@ get "/" do
 
   log "\nSending response #{delay} seconds after request:"
 
-  "SlowSinatra-v0.0.4: Hello, I am thread #{Thread.current.object_id}. This request was received #{delay} seconds ago.\n"
+  "SlowSinatra-v0.0.5: Hello, I am thread #{Thread.current.object_id}. This request was received #{delay} seconds ago.\n"
 end
 
 get "/ping" do
-  "SlowSinatra-v0.0.4: pong!\n"
+  "SlowSinatra-v0.0.5: pong!\n"
 end
