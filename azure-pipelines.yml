@@ -20,19 +20,16 @@ stages:
         pool:
           vmImage: ubuntu-latest
         steps:
-        - task: Docker@2
-          inputs:
-            containerRegistry: 'slow-sinatra-docker-connection'
-            repository: 'teefour/slow-sinatra'
-            command: 'build'
-            Dockerfile: '**/Dockerfile'
-            tags: '$(tag)-test'
-            arguments: '--target test'
-        - script: "docker run -it slow_sinatra:$(tag)-test"
-
-
-
-
+          - task: Docker@2
+            inputs:
+              containerRegistry: "slow-sinatra-docker-connection"
+              repository: "teefour/slow-sinatra"
+              command: "build"
+              Dockerfile: "**/Dockerfile"
+              tags: "$(tag)-test"
+              arguments: "--target test"
+          - script: "docker run slow_sinatra:$(tag)-test"
+            displayName: Run test container
 # stages:
 #   - stage: Build
 #     displayName: Build image
