@@ -29,6 +29,6 @@ class SlowSinatraTest < Minitest::Test
   def test_get_bad_endpoint
     get "/test"
 
-    assert_equal 200, last_response.status
+    assert_equal 404, last_response.status
   end
 end
