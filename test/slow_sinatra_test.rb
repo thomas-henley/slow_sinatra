@@ -16,14 +16,14 @@ class SlowSinatraTest < Minitest::Test
     get "/"
 
     assert_equal 200, last_response.status
-    assert_includes last_response.body, "I am thread"
+    assert_includes last_response.body, "I am"
   end
 
   def test_get_ping
     get "/ping"
 
     assert_equal 200, last_response.status
-    assert_includes last_response.body, "pong!"
+    assert_includes last_response.body, "pong"
   end
 
   def test_get_bad_endpoint
