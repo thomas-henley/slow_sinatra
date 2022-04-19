@@ -9,22 +9,47 @@ resources:
   - repo: self
 
 variables:
-  tag: "$(Build.BuildId)"
+  tag: "azure-$(Build.BuildId)"
 
 stages:
-  - stage: Build
-    displayName: Build image
+  - stage: Test
+    displayName: Test
     jobs:
-      - job: Build
-        displayName: Build
+      - job: build-test
+        displayName: Build test image
         pool:
           vmImage: ubuntu-latest
         steps:
-          - task: Docker@2
-            displayName: Build an image
-            inputs:
-              containerRegistry: "slow-sinatra-docker-connection"
-              repository: "teefour/slow-sinatra"
-              command: "buildAndPush"
-              Dockerfile: "**/Dockerfile"
-              tags: "$(tag)"
+        - task: Docker@2
+          inputs:
+            containerRegistry: 'slow-sinatra-docker-connection'
+            repository: 'teefour/slow-sinatra'
+            command: 'build'
+            Dockerfile: '**/Dockerfile'
+            tags: '$(tag)-test'
+            arguments: '--target test'
+        - task: Docker@2
+          inputs:
+            containerRegistry: 'slow-sinatra-docker-connection'
+            repository: 'teefour/slow-sinatra'
+            command: 'push'
+
+
+# stages:
+#   - stage: Build
+#     displayName: Build image
+#     dependsOn: Test
+#     jobs:
+#       - job: Build
+#         displayName: Build
+#         pool:
+#           vmImage: ubuntu-latest
+#         steps:
+#           - task: Docker@2
+#             displayName: Build an image
+#             inputs:
+#               containerRegistry: "slow-sinatra-docker-connection"
+#               repository: "teefour/slow-sinatra"
+#               command: "buildAndPush"
+#               Dockerfile: "**/Dockerfile"
+#               tags: "$(tag)"
