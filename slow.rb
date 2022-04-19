@@ -38,5 +38,5 @@ get "/" do
 end
 
 get "/ping" do
-  "SlowSinatra-v1.0: pong!"
+  "SlowSinatra-v1.0: pong!\n"
 end
