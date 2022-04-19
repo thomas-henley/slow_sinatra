@@ -1,0 +1,145 @@
+--2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... --2022-04-19 00:47:42--  http://localhost:8080/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 26 [text/html]
+Saving to: ‘index.html’
+
+     0K                                                       100% 3.86M=0s
+
+2022-04-19 00:47:47 (3.86 MB/s) - ‘index.html’ saved [26/26]
+
+200 OK
+Length: 26 [text/html]
+Saving to: ‘index.html.1’
+
+     0K                                                       100% 4.03M=0s
+
+2022-04-19 00:47:47 (4.03 MB/s) - ‘index.html.1’ saved [26/26]
+
+200 OK
+Length: 26 [text/html]
+Saving to: ‘index.html.2’
+
+     0K                                                       100% 4.01M=0s
+
+2022-04-19 00:47:47 (4.01 MB/s) - ‘index.html.2’ saved [26/26]
+
+200 OK
+Length: 26 [text/html]
+Saving to: ‘index.html.3’
+
+     0K                                                       100% 3.97M=0s
+
+2022-04-19 00:47:47 (3.97 MB/s) - ‘index.html.3’ saved [26/26]
+
+200 OK
+Length: 26 [text/html]
+Saving to: ‘index.html.4’
+
+     0K                                                       100% 4.04M=0s
+
+2022-04-19 00:47:47 (4.04 MB/s) - ‘index.html.4’ saved [26/26]
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
+Read error (Connection timed out) in headers.
+Giving up.
+
