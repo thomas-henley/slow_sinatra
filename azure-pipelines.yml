@@ -9,7 +9,7 @@ resources:
   - repo: self
 
 variables:
-  tag: "azure-$(Build.BuildId)"
+  tag: "azure-0.0.3.$(Build.BuildId)"
 
 stages:
   - stage: Test
