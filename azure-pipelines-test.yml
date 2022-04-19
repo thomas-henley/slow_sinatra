@@ -4,27 +4,26 @@ trigger:
       - main
 
 resources:
-- repo: self
+  - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
+  tag: "$(Build.BuildId)"
 
 stages:
-- stage: Test
-  displayName: Build test image
-  jobs:
-  - job: BuildAndTest
-    displayName: Build and Test
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - task: Docker@2
-      displayName: Build test image
-      inputs:
-        command: 'build'
-        Dockerfile: '**/Dockerfile'
-        tags: '$(tag)'
-        arguments: '-t slow_sinatra_test --target test'
-    - script: |
-        docker run slow_sinatra_test:$(tag)
-
+  - stage: Test
+    displayName: Build test image
+    jobs:
+      - job: BuildAndTest
+        displayName: Build and Test
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - task: Docker@2
+            displayName: Build test image
+            inputs:
+              command: "build"
+              Dockerfile: "**/Dockerfile"
+              tags: "$(tag)"
+              arguments: "-t slow_sinatra_test:$(tag) --target test"
+          - script: |
+              docker run slow_sinatra_test:$(tag)
