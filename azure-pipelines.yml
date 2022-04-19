@@ -12,11 +12,11 @@ variables:
   tag: "azure-$(Build.BuildId)"
 
 stages:
-  - stage: Test
-    displayName: Test
+  - stage: Testing
+    displayName: Testing
     jobs:
-      - job: BuildAndRunTest
-        displayName: Build and run test image
+      - job: BuildTestImage
+        displayName: Build test image
         pool:
           vmImage: ubuntu-latest
         steps:
@@ -29,6 +29,21 @@ stages:
               Dockerfile: "**/Dockerfile"
               tags: "$(tag)-test"
               arguments: "--target test"
+          - task: Docker@2
+            displayName: Push test image
+            inputs:
+              containerRegistry: 'slow-sinatra-docker-connection'
+              repository: 'teefour/slow-sinatra'
+              command: 'push'
+              tags: '$(tag)-test'
+      - job: RunTest
+        displayName: Run tests
+        steps:
+          - task: Docker@2
+            displayName: Log in to Docker registry
+            inputs:
+              containerRegistry: 'slow-sinatra-docker-connection'
+              command: 'login'
           - script: "docker run teefour/slow_sinatra:$(tag)-test"
             displayName: Run test container
 # stages:
