@@ -1,10 +1,13 @@
 require "sinatra"
-require "sinatra/reloader"
+require "sinatra/reloader" if development?
 require "tilt/erubis"
 require "date"
 
-set :port, 80
-set :lock, true
+configure do
+  set :port, 80
+  set :lock, true
+  set :version, "0.0.6"
+end
 
 def log(message)
   unless settings.test?
@@ -34,9 +37,9 @@ get "/" do
 
   log "\nSending response #{delay} seconds after request:"
 
-  "SlowSinatra-v0.0.5: Hello, I am thread #{Thread.current.object_id}. This request was received #{delay} seconds ago.\n"
+  "SlowSinatra-v#{settings.version}: Hello, I am thread #{Thread.current.object_id}. This request was received #{delay} seconds ago.\n"
 end
 
 get "/ping" do
-  "SlowSinatra-v0.0.5: pong!\n"
+  "SlowSinatra-v#{settings.version}: pong!\n"
 end
