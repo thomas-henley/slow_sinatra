@@ -3,6 +3,9 @@ trigger:
     exclude:
       - main
 
+# Disable pull request trigger
+pr: none
+
 resources:
   - repo: self
 
