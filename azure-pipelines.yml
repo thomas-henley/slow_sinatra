@@ -38,6 +38,7 @@ stages:
               tags: '$(tag)-test'
       - job: RunTest
         displayName: Run tests
+        dependsOn: BuildTestImage
         pool:
           vmImage: ubuntu-latest
         steps:
