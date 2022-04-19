@@ -34,5 +34,5 @@ get "/" do
 
   log "\nSending response #{delay} seconds after request:"
 
-  "Hello, I am thread #{Thread.current.object_id}. This request was received #{delay} seconds ago.\n"
+  "SlowSinatra-v1.0: Hello, I am thread #{Thread.current.object_id}. This request was received #{delay} seconds ago.\n"
 end
