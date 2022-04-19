@@ -28,12 +28,9 @@ stages:
             Dockerfile: '**/Dockerfile'
             tags: '$(tag)-test'
             arguments: '--target test'
-        - task: Docker@2
-          inputs:
-            containerRegistry: 'slow-sinatra-docker-connection'
-            repository: 'teefour/slow-sinatra'
-            command: 'push'
-            tags: '$(tag)-test'
+        - script: "docker run -it slow_sinatra:$(tag)-test"
+
+
 
 
 # stages:
