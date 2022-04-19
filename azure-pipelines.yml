@@ -33,6 +33,7 @@ stages:
             containerRegistry: 'slow-sinatra-docker-connection'
             repository: 'teefour/slow-sinatra'
             command: 'push'
+            tags: '$(tag)-test'
 
 
 # stages:
