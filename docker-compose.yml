@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  slow-sinatra:
+    build:
+      context: .
+      target: production
+    environment:
+      - VIRTUAL_HOST=slow.colasloth.com
+
+  proxy:
+    image: jwilder/nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    ports:
+      - 80:80
