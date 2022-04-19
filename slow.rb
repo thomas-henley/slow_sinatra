@@ -3,7 +3,7 @@ require "sinatra/reloader"
 require "tilt/erubis"
 require "date"
 
-set :port, 5000
+set :port, 80
 set :lock, true
 
 def log(message)
