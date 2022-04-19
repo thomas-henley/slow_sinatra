@@ -12,8 +12,8 @@ variables:
   tag: "azure-$(Build.BuildId)"
 
 stages:
-  - stage: Testing
-    displayName: Testing
+  - stage: Test
+    displayName: Test
     jobs:
       - job: BuildTestImage
         displayName: Build test image
@@ -38,29 +38,38 @@ stages:
               tags: '$(tag)-test'
       - job: RunTest
         displayName: Run tests
+        pool:
+          vmImage: ubuntu-latest
         steps:
           - task: Docker@2
             displayName: Log in to Docker registry
             inputs:
               containerRegistry: 'slow-sinatra-docker-connection'
               command: 'login'
-          - script: "docker run teefour/slow_sinatra:$(tag)-test"
+          - script: "docker run teefour/slow-sinatra:$(tag)-test"
             displayName: Run test container
-# stages:
-#   - stage: Build
-#     displayName: Build image
-#     dependsOn: Test
-#     jobs:
-#       - job: Build
-#         displayName: Build
-#         pool:
-#           vmImage: ubuntu-latest
-#         steps:
-#           - task: Docker@2
-#             displayName: Build an image
-#             inputs:
-#               containerRegistry: "slow-sinatra-docker-connection"
-#               repository: "teefour/slow-sinatra"
-#               command: "buildAndPush"
-#               Dockerfile: "**/Dockerfile"
-#               tags: "$(tag)"
+  - stage: Build
+    dependsOn: Test
+    displayName: Build
+    jobs:
+      - job: BuildAppImage
+        displayName: Build app image
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+          - task: Docker@2
+            displayName: Build app image
+            inputs:
+              containerRegistry: "slow-sinatra-docker-connection"
+              repository: "teefour/slow-sinatra"
+              command: "build"
+              Dockerfile: "**/Dockerfile"
+              tags: "$(tag)"
+              arguments: "--target production"
+          - task: Docker@2
+            displayName: Push app image
+            inputs:
+              containerRegistry: 'slow-sinatra-docker-connection'
+              repository: 'teefour/slow-sinatra'
+              command: 'push'
+              tags: '$(tag)'
