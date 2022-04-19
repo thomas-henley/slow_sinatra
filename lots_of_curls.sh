@@ -1,11 +1,19 @@
 #!/bin/sh
 
-for i in {1..20}
+rm -f wget-log
+
+for i in {1..5}
 do
-    wget localhost:8080 -T 8 -t 1 -a output-file.txt --background
+    # ../wget -T 15 -t 1 -a output-file.txt --background $1
+    ../wget -T 15 -t 1 -a wget-log -b -nv --header="Request-Time: $(date +"%s")" $1
 done
 
 sleep 30s
 
-cat index.html* > all.log
+cat wget-log >> results.log
+echo "" >> results.log
+echo "" >> results.log
+cat index.html* > results.log
+
 rm index.html*
+rm wget-log
