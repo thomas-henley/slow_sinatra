@@ -36,3 +36,7 @@ get "/" do
 
   "SlowSinatra-v1.0: Hello, I am thread #{Thread.current.object_id}. This request was received #{delay} seconds ago.\n"
 end
+
+get "/ping" do
+  "SlowSinatra-v1.0: pong!"
+end
