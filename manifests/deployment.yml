@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   name: slowsinatra
 spec:
-  replicas: 3
+  replicas: 1
+  minReadySeconds: 30
   selector:
     matchLabels:
       app: slowsinatra

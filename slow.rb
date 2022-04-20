@@ -6,7 +6,7 @@ require "date"
 configure do
   set :port, 80
   set :lock, true
-  set :version, "0.0.6"
+  set :version, "1.0.0"
 end
 
 def log(message)
