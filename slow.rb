@@ -15,28 +15,17 @@ def log(message)
   end
 end
 
-def print_log(message)
-  unless settings.test?
-    print message
-  end
-end
-
 def get_delay(request)
   Time.now.to_i - request.env["HTTP_REQUEST_TIME"].to_i
 end
 
 get "/" do
   log "\n\n"
-  print_log "#{Thread.current.object_id}: Request received. Waiting"
-  # 1.upto(1) do |i|
-  #   print_log "..." unless settings.test?
-  #   sleep(1)
-  # end
   sleep(0.2)
 
   delay = get_delay(request)
 
-  log "\nSending response #{delay} seconds after request:"
+  log "\n#{Thread.current.object_id}: Sending response #{delay} seconds after request:"
 
   ip = Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
   "SlowSinatra - v#{settings.version} : Hello, I am #{ip.ip_address}. This request was received #{delay} seconds ago.\n"

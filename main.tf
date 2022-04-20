@@ -11,15 +11,15 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "slow-sinatra-k8s-rg"
+  name     = "slow-sinatra-kube-deploy-rg"
   location = "westeurope"
 }
 
 resource "azurerm_kubernetes_cluster" "cluster" {
-  name                = "slow-sinatra-k8s-cluster"
+  name                = "slow-sinatra-kube-deploy-cluster"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  dns_prefix          = "slow-sinatra-k8s-cluster"
+  dns_prefix          = "slow-sinatra-kube-deploy-cluster"
 
   default_node_pool {
     name       = "default"
