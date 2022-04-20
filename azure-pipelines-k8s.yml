@@ -3,7 +3,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- main
+  branches:
+    exclude:
+      - main
+
+# Disable pull request trigger
+pr: none
 
 resources:
 - repo: self
