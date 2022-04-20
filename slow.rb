@@ -6,7 +6,7 @@ require "date"
 configure do
   set :port, 80
   set :lock, true
-  set :version, "1.0.0"
+  set :version, "1.0.1"
 end
 
 def log(message)
@@ -39,10 +39,10 @@ get "/" do
   log "\nSending response #{delay} seconds after request:"
 
   ip = Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
-  "SlowSinatra-v#{settings.version}: Hello, I am #{ip.ip_address}. This request was received #{delay} seconds ago.\n"
+  "SlowSinatra - v#{settings.version} : Hello, I am #{ip.ip_address}. This request was received #{delay} seconds ago.\n"
 end
 
 get "/ping" do
   ip = Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
-  "SlowSinatra-v#{settings.version}: pong from #{ip.ip_address}!\n"
+  "SlowSinatra - v#{settings.version} : pong from #{ip.ip_address}!\n"
 end
