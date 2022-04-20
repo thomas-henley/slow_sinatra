@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slowsinatra
+spec:
+  replicas: 3
+  minReadySeconds: 30
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 50%
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: slowsinatra
+  template:
+    metadata:
+      labels:
+        app: slowsinatra
+    spec:
+      containers:
+        - name: slowsinatra
+          image: slowsinatracontainerregistry.azurecr.io/slowsinatra
+          ports:
+            - containerPort: 80
