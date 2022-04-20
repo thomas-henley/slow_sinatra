@@ -11,7 +11,10 @@ trigger:
 pr: none
 
 resources:
-- repo: self
+  pipelines:
+    - pipeline: cd-pipeline # Name of the pipeline resource.
+      source: slow-sinatra-cd-pipeline # The name of the pipeline referenced by this pipeline resource.
+      trigger: true # Run app-ci pipeline when any run of security-lib-ci completes
 
 variables:
 
