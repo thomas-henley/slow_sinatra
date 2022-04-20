@@ -1,19 +1,19 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: slowsinatra 
+  name: slowsinatra
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: slowsinatra
   template:
     metadata:
       labels:
-        app: slowsinatra 
+        app: slowsinatra
     spec:
       containers:
-        - name: slowsinatra 
+        - name: slowsinatra
           image: slowsinatracontainerregistry.azurecr.io/slowsinatra
           ports:
-          - containerPort: 80
+            - containerPort: 80
